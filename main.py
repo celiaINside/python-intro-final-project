@@ -21,7 +21,7 @@ def process_data(data):
     for record in records:
         result.append({
             "title": record.get("title", "Unknown"),
-            "author": record.get("author_name", ["Unknown"])[0],
+            "author": record.get("author_name", ["Unknown"])[0] if record.get("author_name") else "Unknown",
             "year": record.get("first_publish_year", "Unknown")
         })
     return result
