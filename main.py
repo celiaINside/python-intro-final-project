@@ -1,6 +1,6 @@
 import requests
 
-API_URL = "https://your-api-url-here.com"  # Replace with your chosen API endpoint
+API_URL = "https://openlibrary.org/search.json?author=tolkien"  # Replace with your chosen API endpoint
 
 
 def fetch_data():
@@ -16,22 +16,55 @@ def fetch_data():
 
 def process_data(data):
     """Extract and transform the fields you need. Returns a list of dictionaries."""
-    pass
+    records = data.get("docs", [])  # or "results", depending on your API
+    result = []
+    for record in records:
+        result.append({
+            "title": record.get("title", "Unknown"),
+            "author": record.get("author_name", ["Unknown"])[0],
+            "year": record.get("first_publish_year", "Unknown")
+        })
+    return result
 
 
 def display_results(results):
     """Print results to the terminal in a readable format."""
-    pass
+    if not results:
+        print("No results found.")
+        return
+
+    print(f"\n{len(results)} result(s) found:")
+    print("-" * 40)
+
+    for r in results:
+        print(f"  Author:     {r.get('author')}")
+        print(f"  Title: {r.get('title')}")
+        print(f"  Year: {r.get('year')}"),
+        print("-" * 40)
 
 
 def main():
     data = fetch_data()
     if not data:
         return
-
     records = process_data(data)
-    display_results(records)
+    # display_results(records)
 
+    if not records:
+        print("No data returned.")
+        return
+
+    # print(f"Fetched {len(records)} records.")
+    # print(records[0])
+    query = input("Enter a title search term: ").strip().lower()
+    if not query:
+        print("Please enter a value.")
+        return
+    results = [r for r in records if query in r["title"].lower()]
+    if not results:
+        print(f"No results found for '{query}'.")
+        return
+    display_results(results)
 
 if __name__ == "__main__":
     main()
