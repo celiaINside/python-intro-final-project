@@ -1,10 +1,10 @@
-# [Project Title]
+Project Title: Search books by keyword on Open Library
 
-A brief one- or two-sentence description of what this program does.
+This program allows the user to search through Open Library's Tolkien works by keyword, including partial matches. It provides the user with author, title, and year published for each result. 
 
 ## API
 
-This project uses the [API Name](https://api-url-here.com) API.
+This project uses the [API Name](https://openlibrary.org/search.json?author=tolkien) API.
 
 ## Installation
 
@@ -32,11 +32,9 @@ This project uses the [API Name](https://api-url-here.com) API.
 python main.py
 ```
 
-Describe what happens when the program runs — what prompt(s) appear and what the user can do.
+Run the program to be meet with a prompt: Enter a title search term. The program will search the Open Library Tolkien database for any titles that match your search term, and report matches out in an easily readable, organized format.
 
 ## CLI Interactions
 
-Describe each interaction your CLI supports. For example:
+- **Filter by title keyword** — enter a keyword to see all matching records
 
-- **Filter by region** — enter a region name to see all matching records
-- **Look up by name** — enter a name to see details for one specific record
