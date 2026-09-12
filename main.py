@@ -44,6 +44,7 @@ def display_results(results):
 
 
 def main():
+    
     data = fetch_data()
     if not data:
         return
@@ -56,14 +57,20 @@ def main():
 
     # print(f"Fetched {len(records)} records.")
     # print(records[0])
-    query = input("Enter a title search term: ").strip().lower()
-    if not query:
-        print("Please enter a value.")
-        return
-    results = [r for r in records if query in r["title"].lower()]
-    if not results:
-        print(f"No results found for '{query}'.")
-        return
+    while True:
+        query = input("Enter a title search term: ").strip().lower()
+        if not query:
+            print("Please enter a value.")
+            continue
+
+        results = [r for r in records if query in r["title"].lower()]
+
+        if not results:
+                print(f"No results found for '{query}'.")
+                continue
+
+        break
+    
     display_results(results)
 
 if __name__ == "__main__":
