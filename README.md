@@ -4,7 +4,7 @@ This program allows the user to search through Open Library's Tolkien works by k
 
 ## API
 
-This project uses the [API Name](https://openlibrary.org/search.json?author=tolkien) API.
+This project uses the Open Library API: (https://openlibrary.org/search.json?author=tolkien) API.
 
 ## Installation
 
