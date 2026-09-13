@@ -1,6 +1,6 @@
 import requests
 
-API_URL = "https://openlibrary.org/search.json?author=tolkien"  # Replace with your chosen API endpoint
+API_URL = "https://openlibrary.org/search.json?author=hooks"  # Replace with your chosen API endpoint
 
 
 def fetch_data():
