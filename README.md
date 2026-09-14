@@ -36,5 +36,5 @@ Run the program to be meet with a prompt: Enter an author name. Then, one more p
 
 ## CLI Interactions
 
-- **Filter by title keyword** — enter a keyword to see all matching records
-
+- **Filter by author search term** — enter a keyword to see all matching records
+- **Filter by title search term** — enter a keyword to see all matching records

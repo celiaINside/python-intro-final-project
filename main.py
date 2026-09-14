@@ -4,7 +4,7 @@ API_URL = "https://openlibrary.org/search.json"
 
 
 def fetch_data(author):
-    """Fetch data from the API. Returns the raw JSON response, or an empty list on failure."""
+    """Fetch data from the API. Returns the raw JSON response, or an empty dict* on failure."""
     try:
         response = requests.get(API_URL, params={"author": author})
         response.raise_for_status()
