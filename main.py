@@ -74,8 +74,8 @@ def main():
         results = [r for r in records if query in r["title"].lower()]
 
         if not results:
-                print(f"No results found for '{query}'.")
-                continue
+            print(f"No results found for '{query}'.")
+            continue
 
         break
     
