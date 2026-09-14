@@ -1,10 +1,10 @@
-Project Title: Search books by keyword on Open Library
+Project Title: Open Library Book Search (Author & Title)
 
-This program allows the user to search through Open Library's hooks works by keyword, including partial matches. It provides the user with author, title, and year published for each result. 
+This program allows the user to first search for an author through Open Library's vast database by entering a name. Then, the user is prompted to search for Titles by that author via a title search term. The program then provides the user with author, title, and year published for each result. 
 
 ## API
 
-This project uses the Open Library API: (https://openlibrary.org/search.json?author=hooks) API.
+This project uses the Open Library API: https://openlibrary.org/search.json
 
 ## Installation
 
@@ -32,7 +32,7 @@ This project uses the Open Library API: (https://openlibrary.org/search.json?aut
 python main.py
 ```
 
-Run the program to be meet with a prompt: Enter a title search term. The program will search the Open Library hooks database for any titles that match your search term, and report matches out in an easily readable, organized format.
+Run the program to be meet with a prompt: Enter an author name. Then, one more prompt: Enter a title search term. The program will search the Open Library database for any titles by your given author name that match your title search term, and report matches out in an easily readable, organized format.
 
 ## CLI Interactions
 
