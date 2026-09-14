@@ -32,7 +32,7 @@ This project uses the Open Library API: https://openlibrary.org/search.json
 python main.py
 ```
 
-Run the program to be meet with a prompt: Enter an author name. Then, one more prompt: Enter a title search term. The program will search the Open Library database for any titles by your given author name that match your title search term, and report matches out in an easily readable, organized format.
+Run the program to be met with a prompt: Enter an author name. The program fetches all works by that author. Then, one more prompt: Enter a title search term. The program will search the Open Library database for any titles by your given author name that match your title search term, and report matches out in an easily readable, organized format.
 
 ## CLI Interactions
 
