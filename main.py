@@ -4,29 +4,30 @@ API_URL = "https://openlibrary.org/search.json"
 
 
 def fetch_data(author):
-    """Fetch data from the API. Returns the raw JSON response, or an empty dict* on failure."""
+    """Fetch data from the API. Returns the raw JSON response, or an empty list on failure."""
     try:
         response = requests.get(API_URL, params={"author": author})
         response.raise_for_status()
         return response.json()
     except requests.exceptions.RequestException as e:
         print(f"Error: could not fetch data. {e}")
-        return {}
+        return []
 
 
 def process_data(data):
     """Extract and transform the fields you need. Returns a list of dictionaries."""
     if not isinstance(data, dict):
         return []
-    records = data.get("docs", [])  # or "results", depending on your API
-    result = []
-    for record in records:
-        result.append({
-            "title": record.get("title", "Unknown"),
-            "author": record.get("author_name", ["Unknown"])[0] if record.get("author_name") else "Unknown",
-            "year": record.get("first_publish_year", "Unknown")
+    books = data.get("docs", [])  # or "results", depending on your API
+    records = []
+    for book in books:
+        authors = book.get("author_name", [])
+        records.append({
+            "title": book.get("title", "Unknown"),
+            "author": authors[0] if authors else "Unknown",
+            "year": book.get("first_publish_year", "Unknown")
         })
-    return result
+    return records
 
 
 def display_results(results):
@@ -41,7 +42,7 @@ def display_results(results):
     for r in results:
         print(f"  Author:     {r.get('author')}")
         print(f"  Title: {r.get('title')}")
-        print(f"  Year: {r.get('year')}"),
+        print(f"  Year: {r.get('year')}")
         print("-" * 40)
 
 
