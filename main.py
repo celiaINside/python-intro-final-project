@@ -1,12 +1,12 @@
 import requests
 
-API_URL = "https://openlibrary.org/search.json?author=hooks"  # Replace with your chosen API endpoint
+API_URL = "https://openlibrary.org/search.json"
 
 
-def fetch_data():
+def fetch_data(author):
     """Fetch data from the API. Returns the raw JSON response, or an empty list on failure."""
     try:
-        response = requests.get(API_URL)
+        response = requests.get(API_URL, params={"author": author})
         response.raise_for_status()
         return response.json()
     except requests.exceptions.RequestException as e:
@@ -44,19 +44,24 @@ def display_results(results):
 
 
 def main():
-    
-    data = fetch_data()
+
+    author = input("Enter an author: ").strip()
+
+    if not author:
+        print("Please enter an author.")
+        return
+
+    data = fetch_data(author)
+
     if not data:
         return
+
     records = process_data(data)
-    # display_results(records)
 
     if not records:
-        print("No data returned.")
+        print(f"No books found for '{author}'.")
         return
 
-    # print(f"Fetched {len(records)} records.")
-    # print(records[0])
     while True:
         query = input("Enter a title search term: ").strip().lower()
         if not query:
