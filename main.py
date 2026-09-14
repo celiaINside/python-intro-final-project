@@ -11,11 +11,13 @@ def fetch_data(author):
         return response.json()
     except requests.exceptions.RequestException as e:
         print(f"Error: could not fetch data. {e}")
-        return []
+        return {}
 
 
 def process_data(data):
     """Extract and transform the fields you need. Returns a list of dictionaries."""
+    if not isinstance(data, dict):
+        return []
     records = data.get("docs", [])  # or "results", depending on your API
     result = []
     for record in records:
