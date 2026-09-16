@@ -47,7 +47,7 @@ def display_results(results):
         print(f"  Year:       {r.get('year') if r.get('year') is not None else 'Unknown'}")
         print("-" * 40)
 
-def create_visualization(records):
+def create_visualization(records, author):
     """Create a bar chart showing titles published by decade."""
     decade_counts = {}
 
@@ -70,7 +70,7 @@ def create_visualization(records):
     plt.bar(labels, values, color = "navy")
     plt.xlabel("Decade")
     plt.ylabel("Titles Published")
-    plt.title("Titles Published per Decade")
+    plt.title(f"Titles Published per Decade by {author}")
     plt.tight_layout()
     plt.savefig("sample_chart.png")
     plt.show()
@@ -110,7 +110,7 @@ def main():
         break
     
     display_results(results)
-    create_visualization(records)
+    create_visualization(records, author)
 
 if __name__ == "__main__":
     main()
