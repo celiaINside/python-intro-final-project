@@ -1,6 +1,6 @@
 Project Title: Open Library Book Search (Author & Title)
 
-This program allows the user to first search for an author through Open Library's vast database by entering a name. Then, the user is prompted to search for Titles by that author via a title search term. The program then provides the user with author, title, and year published for each result. 
+This program allows the user to first search for an author through Open Library's vast database by entering a name. Then, the user is prompted to search for Titles by that author via a title search term. The program then provides the user with author, title, and year published for each result. As a bonus, the program generates a bar chart that gives the user a visual representation of their author's published works over decades.
 
 ## API
 
@@ -44,3 +44,5 @@ Run the program to be met with a prompt: Enter an author name. The program fetch
 What the chart shows: The chart shows the number of titles a user-chosen author had published in each decade. This shows how prolific they were in publishing throughout the years.
 Main takeaway of the chart: The main takeaway is to get a sense of the author's output -- when they were most active in publishing their work, when there were dips, etc.
 Why I chose this chart type: I chose this bar chart type because it's measurable and understandable to the eye. It also adds another dimension to the data that is already being shown; it takes it a step further and gives the user a context of the author's activity level at different times. 
+
+Specific question framed and answered: What are the user's author's publishing patterns throughout the decade? This info is given additionally after the user does their search on an author's work; it adds color to the overall program.
