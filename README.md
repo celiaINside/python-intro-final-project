@@ -38,3 +38,9 @@ Run the program to be met with a prompt: Enter an author name. The program fetch
 
 - **Filter by author search term** — enter a keyword to see all matching records
 - **Filter by title search term** — enter a keyword to see all matching records
+
+## Visualization
+
+What the chart shows: The chart shows the number of titles a user-chosen author had published in each decade. This shows how prolific they were in publishing throughout the years.
+Main takeaway of the chart: The main takeaway is to get a sense of the author's output -- when they were most active in publishing their work, when there were dips, etc.
+Why I chose this chart type: I chose this bar chart type because it's measurable and understandable to the eye. It also adds another dimension to the data that is already being shown; it takes it a step further and gives the user a context of the author's activity level at different times. 

@@ -1,5 +1,6 @@
 import requests
 import matplotlib.pyplot as plt
+import os
 
 API_URL = "https://openlibrary.org/search.json"
 
@@ -74,7 +75,8 @@ def create_visualization(records):
     plt.show()
 
 def main():
-
+    home = os.getenv("HOME")
+    print(f"Home directory: {home}")
     author = input("Enter an author: ").strip()
 
     if not author:
