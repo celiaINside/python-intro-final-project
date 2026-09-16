@@ -63,10 +63,11 @@ def create_visualization(records):
 
         decade_counts[decade] += 1
 
-    labels = sorted(decade_counts.keys())
-    values = [decade_counts[decade] for decade in labels]
+    decades = sorted(decade_counts.keys())
+    labels = [f"{decade}s" for decade in decades]
+    values = [decade_counts[decade] for decade in decades]
 
-    plt.bar(labels, values)
+    plt.bar(labels, values, color = "navy")
     plt.xlabel("Decade")
     plt.ylabel("Titles Published")
     plt.title("Titles Published per Decade")
